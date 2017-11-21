@@ -16,6 +16,7 @@ export class ListComponent implements OnInit {
    
   ngOnInit() {
     this._service.retrieveProduct(res=>{this.products = res});
+    console.log(this.products)
   }
   
   deleteProduct(id) {

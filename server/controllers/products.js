@@ -11,13 +11,14 @@ module.exports = {
         res.json({err:err});
       }
       res.json(products);
+      console.log("from controller", products)
     })
   },
 
   create: function(req, res) {
     console.log(req.body);
     console.log("back create route");
-    var product = new Product({title: req.body.title, price: req.body.price, image: req.body.image_url});
+    var product = new Product({title: req.body.title, price: req.body.price, image_url: req.body.image_url});
     
     product.save(function(err) {
       if (err) {

@@ -19,7 +19,7 @@ export class CreateComponent implements OnInit {
   
   OnSubmit() {
     this._service.create(this.newProduct, (res)=>{
-      console.log(res);
+      console.log(res.json());
       console.log("Create component data sending route");
       this.newProduct = {
           title: "",

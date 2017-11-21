@@ -10,7 +10,7 @@ export class ProductService {
   constructor(private _http: Http) { }
   
   create(products, callback) {
-    console.log(products);
+    // console.log(products);
         console.log("create service route");
     this._http.post('/products', products).subscribe(
       (res)=>{
@@ -46,6 +46,8 @@ export class ProductService {
     this._http.get('/products').subscribe(
       (res)=>{
         callback(res.json());
+        console.log("from service", res.json())
+
       },
       (err)=>{
         console.log(err);
